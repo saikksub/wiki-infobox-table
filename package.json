@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/saikksub/wiki-infobox#readme",
   "dependencies": {
+    "curl": "^0.1.4",
     "fetch": "^1.1.0",
     "got": "^9.3.0",
     "jquery": "^3.3.1",

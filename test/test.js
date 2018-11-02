@@ -8,7 +8,9 @@ describe('Array', function () {
       return wiki({
         data: 'microsoft'
       }).then(function (data) {
-        assert.equal(data.ok === 'ok', true)
+        assert.ok(data)
+      }).catch(function (error) {
+        assert.fail(error)
       })
     })
   })
