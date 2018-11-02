@@ -1,0 +1,36 @@
+{
+  "name": "wiki-infobox",
+  "version": "0.0.1",
+  "description": "Node module to extract information from wikipedia infobox-vcard.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saikksub/wiki-infobox.git"
+  },
+  "keywords": [
+    "wikipedia",
+    "wiki",
+    "infobox",
+    "wiki-vcard",
+    "wiki-infobox-vcard",
+    "infobox-vcard"
+  ],
+  "author": "saikksub <saikksub@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saikksub/wiki-infobox/issues"
+  },
+  "homepage": "https://github.com/saikksub/wiki-infobox#readme",
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "got": "^9.3.0",
+    "jquery": "^3.3.1",
+    "jsdom": "^13.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
