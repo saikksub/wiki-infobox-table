@@ -19,7 +19,7 @@ Fetch wikipedia infobox table as JSON object.
       console.error(error)
     })
 ```
-Following is the resultant JSON object for the above example:
+Following is the result:
 
 ```
   {
@@ -82,3 +82,16 @@ Following is the resultant JSON object for the above example:
     }
   }
 ```
+
+## Development
+```
+  git clone https://github.com/saikksub/wiki-infobox-table.git
+  npm install
+  npm test
+```
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
+
+## Contact
+[saikksub@gmail.com](mailto:saikksub@gmail.com)
