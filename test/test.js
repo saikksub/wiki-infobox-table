@@ -6,7 +6,7 @@ describe('Array', function () {
     it('should return JSON object when wikipedia entry found. Otherwise null', function () {
       this.timeout(15000)
       return wiki({
-        url: 'https://en.wikipedia.org/wiki/Microsoft'
+        url: 'https://en.wikipedia.org/wiki/Node.js'
       }).then(function (data) {
         assert.ok(data)
       }).catch(function (error) {

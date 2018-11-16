@@ -1,7 +1,7 @@
 {
-  "name": "wiki-infobox",
+  "name": "wiki-infobox-table",
   "version": "0.0.1",
-  "description": "Node module to extract information from wikipedia infobox-vcard.",
+  "description": "Get JSON data for wikipedia infobox table",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -28,6 +28,7 @@
     "curl": "^0.1.4",
     "fetch": "^1.1.0",
     "got": "^9.3.0",
+    "is-url": "^1.2.4",
     "jquery": "^3.3.1",
     "jsdom": "^13.0.0"
   },

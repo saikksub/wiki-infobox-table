@@ -7,13 +7,13 @@
 const JSDOM = require('jsdom').JSDOM
 const jQuery = require('jquery');
 const curl = require('curl')
-const fs = require('fs')
+const isUrl = require('is-url')
 
 module.exports = async function (config) {
   const promise = new Promise(function (resolve, reject) {
     if (
       config.constructor === {}.constructor && 'url' in config &&
-      typeof config.url === 'string' && config.url
+      typeof config.url === 'string' && config.url && isUrl(config.url)
     ) {
       let url = config.url
       curl.get(
@@ -45,7 +45,29 @@ function extractData (html) {
   const items = $('.infobox').find('tr')
   if (items.length > 0) {
     for (let index = 0; index < items.length; index++) {
-      console.log($(items[index]))
+      let keyText = $(items[index]).children('th').text()
+      let valueText = $(items[index]).children('td').text()
+      if (keyText && valueText) {
+        valueText = valueText.replace(/(\r\n|\n|\r)/gm, ',')
+        if (valueText.split(',').length > 1) {
+          const values = []
+          valueText.split(',').forEach((item) => {
+            if (item) {
+              values.push(item)
+            }
+          })
+          resultObj[Object.keys(resultObj).length] = {
+            key: `${keyText}`,
+            value: values
+          }
+        } else {
+          resultObj[Object.keys(resultObj).length] = {
+            key: `${keyText}`,
+            value: `${valueText}`
+          }
+        }
+      }
     }
   }
+  console.log(resultObj)
 }
