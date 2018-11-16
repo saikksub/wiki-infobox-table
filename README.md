@@ -1,5 +1,5 @@
 # wiki-infobox-table
-Fetch wikipedia infobox table data as JSON object.
+Fetch wikipedia infobox table as JSON object.
 
 ## Installation
 ```
