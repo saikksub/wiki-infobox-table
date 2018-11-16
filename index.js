@@ -5,41 +5,47 @@
  */
 
 const JSDOM = require('jsdom').JSDOM
-const $ = jQuery = require('jquery');
+const jQuery = require('jquery');
 const curl = require('curl')
 const fs = require('fs')
 
 module.exports = async function (config) {
   const promise = new Promise(function (resolve, reject) {
-    let url = null
-    if (config.data.includes('wikipedia.org')) {
-      // Provided url
-      url = config.data
+    if (
+      config.constructor === {}.constructor && 'url' in config &&
+      typeof config.url === 'string' && config.url
+    ) {
+      let url = config.url
+      curl.get(
+        url,
+        null,
+        function (err, response, body) {
+          if (err) {
+            reject(err)
+          }
+          if (response.statusCode === 200) {
+            extractData(body)
+            resolve({
+              ok: 'ok'
+            })
+          }
+        }
+      )
     } else {
-      // Provided keyword
-      url = `https://${config.lang || 'en'}.wikipedia.org/wiki/${config.data}`
+      reject(new Error('Invalid url'))
     }
-    curl.get(
-      url,
-      null,
-      function (err, response, body) {
-        if (err) {
-          reject(err)
-        }
-        if (response.statusCode === 200) {
-          extractData(body)
-          resolve({
-            ok: 'ok'
-          })
-        }
-      }
-    )
   })
   await promise
   return promise
 }
 
 function extractData (html) {
+  const resultObj = {}
   const $ = jQuery(new JSDOM(html).window)
-  console.log($('.infobox').find('th'))
+  const items = $('.infobox').find('tr')
+  if (items.length > 0) {
+    for (let index = 0; index < items.length; index++) {
+      console.log($(items[index]))
+    }
+  }
 }
