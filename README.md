@@ -2,6 +2,7 @@
 Fetch wikipedia infobox table as JSON object.
 
 [![GitHub version](https://badge.fury.io/gh/saikksub%2Fwiki-infobox-table.svg)](https://badge.fury.io/gh/saikksub%2Fwiki-infobox-table)
+[![CircleCI](https://circleci.com/gh/saikksub/wiki-infobox-table/tree/master.svg?style=svg)](https://circleci.com/gh/saikksub/wiki-infobox-table/tree/master)
 
 ## Installation
 ```
