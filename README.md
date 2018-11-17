@@ -1,6 +1,7 @@
 # wiki-infobox-table
 Fetch wikipedia infobox table as JSON object.
 
+[![npm version](https://badge.fury.io/js/wiki-infobox-table.svg)](https://badge.fury.io/js/wiki-infobox-table)
 [![GitHub version](https://badge.fury.io/gh/saikksub%2Fwiki-infobox-table.svg)](https://badge.fury.io/gh/saikksub%2Fwiki-infobox-table)
 [![CircleCI](https://circleci.com/gh/saikksub/wiki-infobox-table/tree/master.svg?style=svg)](https://circleci.com/gh/saikksub/wiki-infobox-table/tree/master)
 
