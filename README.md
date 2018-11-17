@@ -1,6 +1,8 @@
 # wiki-infobox-table
 Fetch wikipedia infobox table as JSON object.
 
+[![GitHub version](https://badge.fury.io/gh/saikksub%2Fwiki-infobox-table.svg)](https://badge.fury.io/gh/saikksub%2Fwiki-infobox-table)
+
 ## Installation
 ```
   npm install wiki-infobox-table
